@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Results Page</title>
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
+
 <body>
     <main>
         <h1>🍹🏄‍♀️ Contest Results 🏄‍♀️🍹</h1>
@@ -28,14 +30,14 @@
 
         // Gather some of the data from the querystring
         let name = `${urlParams.get('firstname')} ${urlParams.get('lastname')}`
-        let choice = urlParams.get('location') 
-        let color = urlParams.get('color') 
+        let choice = urlParams.get('location')
+        let color = urlParams.get('color')
         let extras = urlParams.getAll('extras')
-        let email = urlParams.get('email') 
-        let address = urlParams.get('address') 
+        let email = urlParams.get('email')
+        let address = urlParams.get('address')
         let cityStateZip = `${urlParams.get('city')}, ${urlParams.get('state')} ${urlParams.get('zip')}`
         let emailMessage = document.createElement('p')
-        
+
         // Fill the page with the user's personal information
         document.getElementById('disclaimer').textContent = `Thank you, ${name}, for entering our once in a lifetime vacation contest!`
         emailMessage.append(`${winner ? 'As our chosen winner' : 'Whenever we\'d like to send marketing materials to you'}, we will contact you via email at ${email}, and send written correspondence to the following mailbox:`)
@@ -68,4 +70,5 @@
         }
     </script>
 </body>
+
 </html>
